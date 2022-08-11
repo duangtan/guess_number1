@@ -3,10 +3,13 @@ import 'dart:math';
 class Game{
   int answer=0; // instance field
   int total =0;
-  Game(){
+  int maxRandom =100;
+
+  Game(int maxRandom){
     var r = Random();
-    answer = r.nextInt(100)+1;
+    answer = r.nextInt(maxRandom)+1;
     var isCorrect = false;
+
   }
   int doGuess(int num){
     if(num > answer){
@@ -20,9 +23,8 @@ class Game{
     }else{
       total++;
       print("$num is Correct , total guesses $total");
-      total=0;
       return 1;
-    }
+    }total=0;
   }
 
 }
